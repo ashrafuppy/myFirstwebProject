@@ -2,9 +2,9 @@ from flask import Flask, render_template, redirect, url_for, request, flash
 from flask_mysqldb import MySQL
 app = Flask(__name__)
 app.secret_key = "super secret key"
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'alamien@786'
+app.config['MYSQL_HOST'] = 'rds endpoint'
+app.config['MYSQL_USER'] = 'admin'
+app.config['MYSQL_PASSWORD'] = 'password'
 app.config['MYSQL_DB'] = 'my_project'
 
 mysql = MySQL(app)
