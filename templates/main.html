@@ -68,7 +68,13 @@ html, body {
 .text-al{
     text-align: center;
 }
-
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+ 
+}
 </style>
 </head>
 <body>
@@ -85,14 +91,20 @@ html, body {
 </div>
 <div id="content" >
     <div class="text-al">
-  <h2>Coming soon</h2>
-  <p>36 days left</p>
+	<div class="center">
+  <hr><table><tr><td>
+  <h2> Please upload your file here </h2> </td></tr> <tr><td> <hr> </td></tr><tr><td>
+ <form action="/action_upload">
+  <input type="file" id="myFile" name="filename"> 
+  <input type="submit">
+ </form> </div>
+ </td></tr></table>
     </div>
      <div id="push"></div>
 </div>
 
 <div id="footer">
-  <p>Wayanad, sulthan bathery</p>
+  <p> </p>
 </div>
 
 </body>
