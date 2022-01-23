@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Dev') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Inte') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('QA') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+    }
+}
