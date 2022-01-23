@@ -1,6 +1,9 @@
 pipeline {
     agent any
-
+    parameters {
+            string 'USERNAME'
+            password defaultValue: '', name: 'Password'
+        }
     stages {
         stage('Dev') {
             steps {
@@ -12,10 +15,7 @@ pipeline {
                 echo 'Hello Inte'
             }
         }
-        parameters {
-            string 'USERNAME'
-            password defaultValue: '', name: 'Password'
-        }
+        
         stage('QA') {
             steps {
                 echo 'Hello QA'
