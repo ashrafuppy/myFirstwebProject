@@ -4,17 +4,22 @@ pipeline {
     stages {
         stage('Dev') {
             steps {
-                echo 'Hello World'
+                echo 'Hello Dev'
             }
         }
         stage('Inte') {
             steps {
-                echo 'Hello World'
+                echo 'Hello Inte'
             }
         }
         stage('QA') {
             steps {
-                echo 'Hello World'
+                echo 'Hello QA'
+            }
+        }
+        stage('REG') {
+            steps {
+                echo 'Hello REGR'
             }
         }
     }
