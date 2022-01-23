@@ -6,15 +6,13 @@ pipeline {
         stage('Hello') {
             steps {
                 echo 'Hello World'
-                echo "$USERNAME"
-                echo "$PASSWORD"
+               
             }
         }
          stage('dev') {
             steps {
                 echo 'dev environment'
-                echo "$USERNAME"
-                echo "$PASSWORD"
+                
             }
          }
           stage('prod') {
@@ -22,12 +20,12 @@ pipeline {
                   branch 'master'
               }
               input {
-  message 'Please approve the package'
-  parameters {
-    string 'UserID'
-    password defaultValueAsSecret: <object of type hudson.util.Secret>, name: 'Password'
-  }
-}
+                    message 'Please approve the package'
+                    parameters {
+                        string 'UserID'
+                        password defaultValue: '', name: 'password'
+                      }
+                    }
 
             steps {
                 echo 'prod environment'
