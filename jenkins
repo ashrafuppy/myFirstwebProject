@@ -1,30 +1,38 @@
 pipeline {
     agent any
+    
     parameters {
-            string 'USERNAME'
-            password defaultValue: '', name: 'Password'
+     string defaultValue: 'test', name: 'USERNAME'
+     string defaultValue: 'test', name: 'PASSWORD'
         }
+    
     stages {
-        stage('Dev') {
+        stage('Hello') {
             steps {
-                echo 'Hello Dev'
+                echo 'Hello World'
+                echo "$USERNAME"
+                echo "$PASSWORD"
             }
         }
-        stage('Inte') {
+         stage('dev') {
             steps {
-                echo 'Hello Inte'
+                echo 'dev environment'
+                echo "$USERNAME"
+                echo "$PASSWORD"
             }
-        }
-        
-        stage('QA') {
+         }
+          stage('prod') {
+              when {
+                  branch 'master'
+              }
+              input{
+                  message "do you want to deploy"
+              }
             steps {
-                echo 'Hello QA'
+                echo 'prod environment'
+                echo "$USERNAME"
+                echo "$PASSWORD"
             }
-        }
-        stage('REG') {
-            steps {
-                echo 'Hello REGR'
-            }
-        }
+          }
     }
 }
