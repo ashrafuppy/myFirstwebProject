@@ -1,10 +1,6 @@
 pipeline {
     agent any
     
-    parameters {
-     string defaultValue: 'test', name: 'USERNAME'
-     string defaultValue: 'test', name: 'PASSWORD'
-        }
     
     stages {
         stage('Hello') {
@@ -25,9 +21,14 @@ pipeline {
               when {
                   branch 'master'
               }
-              input{
-                  message "do you want to deploy"
-              }
+              input {
+  message 'Please approve the package'
+  parameters {
+    string 'UserID'
+    password defaultValueAsSecret: <object of type hudson.util.Secret>, name: 'Password'
+  }
+}
+
             steps {
                 echo 'prod environment'
                 echo "$USERNAME"
